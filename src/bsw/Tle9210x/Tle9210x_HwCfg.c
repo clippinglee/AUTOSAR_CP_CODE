@@ -1,0 +1,138 @@
+/*****************************************************************************************************************
+******************************************************************************************************************
+*  Copyright (C) .                                                                            
+*  All rights reserved.                                                                                           
+******************************************************************************************************************
+*  FileName: Tle9210x                                                                                             
+*  Content:  Tle9210x family drive
+*  Category: Tle92104 Tle92108
+******************************************************************************************************************
+*  Revision Management                                                                                            
+*  yyyy.mm.dd    name              version      description                                                       
+*  ----------    --------          -------      -----------------------------------                               
+*  2025.03.30    clipping            v0001        Frist edit                                                        
+******************************************************************************************************************
+******************************************************************************************************************/
+/* Include Headerfiles  */
+#include "Tle9210x_HwCfg.h"
+#include "Dio.h"
+#include "Spi.h"
+#include "Pwm.h"
+uint8 gTle9210x_u8Group0ChipNum = TLE9210X_CHIP_MAX;
+const Tle9210x_GroupType cTle9210x_atGroupCfg[TLE9210X_GROUP_MAX] =
+{
+    {
+        SpiConf_SpiChannel_SpiChannel_TLE92108_0, 
+        SpiConf_SpiSequence_SpiSequence_TLE92108_0,
+        TLE9210X_DAISY_CHAIN_NO_USER,
+        &gTle9210x_u8Group0ChipNum,
+    },
+    {
+        SpiConf_SpiChannel_SpiChannel_TLE92108_1, 
+        SpiConf_SpiSequence_SpiSequence_TLE92108_1,
+        TLE9210X_DAISY_CHAIN_NO_USER,
+        &gTle9210x_u8Group0ChipNum,
+    },
+    {
+        SpiConf_SpiChannel_SpiChannel_TLE92108_2, 
+        SpiConf_SpiSequence_SpiSequence_TLE92108_2,
+        TLE9210X_DAISY_CHAIN_NO_USER,
+        &gTle9210x_u8Group0ChipNum,
+    },
+};
+
+const Tle9210x_ChipType cTle9210x_atChipCfg[TLE9210X_GROUP_MAX][TLE9210X_CHIP_MAX] = 
+{
+    {
+        {
+            TLE9210X_TLE92108,
+            DioConf_DioChannel_DioChannel_P32_02,
+            TLE9210X_REG_BANK_OFF,
+            TLE9210X_WD_200_MS,
+            TLE9210X_WD_DIS
+        },
+    },
+    {
+        {
+            TLE9210X_TLE92108,
+            DioConf_DioChannel_DioChannel_P32_04,
+            TLE9210X_REG_BANK_OFF,
+            TLE9210X_WD_200_MS,
+            TLE9210X_WD_DIS
+        },
+    },
+    {
+        {
+            TLE9210X_TLE92108,
+            DioConf_DioChannel_DioChannel_P31_00,
+            TLE9210X_REG_BANK_OFF,
+            TLE9210X_WD_200_MS,
+            TLE9210X_WD_DIS
+        },
+    },
+};
+
+const Tle9210x_PwmChnType cTle9210x_atPwmChnCfg[TLE9210X_GROUP_MAX][TLE9210X_CHIP_MAX][TLE9210X_PWM_CHN_MAX] =
+{
+    {
+        {
+            {1,TLE9210X_PWM_ENABLE,TLE9210X_HB1,0x0Au,0x0Au,TLE0210X_PWM_CHARGE_TIME_125NS,TLE0210X_PWM_CHARGE_TIME_125NS},
+            {1,TLE9210X_PWM_ENABLE,TLE9210X_HB1,0x0Au,0x0Au,TLE0210X_PWM_CHARGE_TIME_125NS,TLE0210X_PWM_CHARGE_TIME_125NS},
+            {1,TLE9210X_PWM_ENABLE,TLE9210X_HB1,0x0Au,0x0Au,TLE0210X_PWM_CHARGE_TIME_125NS,TLE0210X_PWM_CHARGE_TIME_125NS},
+        },
+    },
+    {
+        {
+            {1,TLE9210X_PWM_ENABLE,TLE9210X_HB1,0x0Au,0x0Au,TLE0210X_PWM_CHARGE_TIME_125NS,TLE0210X_PWM_CHARGE_TIME_125NS},
+            {1,TLE9210X_PWM_ENABLE,TLE9210X_HB1,0x0Au,0x0Au,TLE0210X_PWM_CHARGE_TIME_125NS,TLE0210X_PWM_CHARGE_TIME_125NS},
+            {1,TLE9210X_PWM_ENABLE,TLE9210X_HB1,0x0Au,0x0Au,TLE0210X_PWM_CHARGE_TIME_125NS,TLE0210X_PWM_CHARGE_TIME_125NS},
+        },
+    },
+    {
+        {
+            {1,TLE9210X_PWM_ENABLE,TLE9210X_HB1,0x0Au,0x0Au,TLE0210X_PWM_CHARGE_TIME_125NS,TLE0210X_PWM_CHARGE_TIME_125NS},
+            {1,TLE9210X_PWM_ENABLE,TLE9210X_HB1,0x0Au,0x0Au,TLE0210X_PWM_CHARGE_TIME_125NS,TLE0210X_PWM_CHARGE_TIME_125NS},
+            {1,TLE9210X_PWM_ENABLE,TLE9210X_HB1,0x0Au,0x0Au,TLE0210X_PWM_CHARGE_TIME_125NS,TLE0210X_PWM_CHARGE_TIME_125NS},
+        },
+    },
+};
+
+const Tle9210x_HbChnType cTle9210x_atHbChnCfg[TLE9210X_GROUP_MAX][TLE9210X_CHIP_MAX][TLE9210X_HB_CHN_MAX] = 
+{
+    {
+        {
+            {TLE9210X_HB_DSM_DH,TLE9210X_HB_DSTH_0_20_V,TLE9210X_HB_CCPBLK_CCP1_BLANK1,TLE9210X_HB_IDIAG_DEACTIVATED,TLE9210X_HB_ICHGST_CURRENT_1},
+            {TLE9210X_HB_DSM_DH,TLE9210X_HB_DSTH_0_20_V,TLE9210X_HB_CCPBLK_CCP1_BLANK1,TLE9210X_HB_IDIAG_DEACTIVATED,TLE9210X_HB_ICHGST_CURRENT_1},
+            {TLE9210X_HB_DSM_DH,TLE9210X_HB_DSTH_0_20_V,TLE9210X_HB_CCPBLK_CCP1_BLANK1,TLE9210X_HB_IDIAG_DEACTIVATED,TLE9210X_HB_ICHGST_CURRENT_1},
+            {TLE9210X_HB_DSM_DH,TLE9210X_HB_DSTH_0_20_V,TLE9210X_HB_CCPBLK_CCP1_BLANK1,TLE9210X_HB_IDIAG_DEACTIVATED,TLE9210X_HB_ICHGST_CURRENT_1},
+            {TLE9210X_HB_DSM_DH,TLE9210X_HB_DSTH_0_20_V,TLE9210X_HB_CCPBLK_CCP1_BLANK1,TLE9210X_HB_IDIAG_DEACTIVATED,TLE9210X_HB_ICHGST_CURRENT_1},
+            {TLE9210X_HB_DSM_DH,TLE9210X_HB_DSTH_0_20_V,TLE9210X_HB_CCPBLK_CCP1_BLANK1,TLE9210X_HB_IDIAG_DEACTIVATED,TLE9210X_HB_ICHGST_CURRENT_1},
+            {TLE9210X_HB_DSM_DH,TLE9210X_HB_DSTH_0_20_V,TLE9210X_HB_CCPBLK_CCP1_BLANK1,TLE9210X_HB_IDIAG_DEACTIVATED,TLE9210X_HB_ICHGST_CURRENT_1},
+            {TLE9210X_HB_DSM_DH,TLE9210X_HB_DSTH_0_20_V,TLE9210X_HB_CCPBLK_CCP1_BLANK1,TLE9210X_HB_IDIAG_DEACTIVATED,TLE9210X_HB_ICHGST_CURRENT_1},
+        },
+    },
+    {
+        {
+            {TLE9210X_HB_DSM_DH,TLE9210X_HB_DSTH_0_20_V,TLE9210X_HB_CCPBLK_CCP1_BLANK1,TLE9210X_HB_IDIAG_DEACTIVATED,TLE9210X_HB_ICHGST_CURRENT_1},
+            {TLE9210X_HB_DSM_DH,TLE9210X_HB_DSTH_0_20_V,TLE9210X_HB_CCPBLK_CCP1_BLANK1,TLE9210X_HB_IDIAG_DEACTIVATED,TLE9210X_HB_ICHGST_CURRENT_1},
+            {TLE9210X_HB_DSM_DH,TLE9210X_HB_DSTH_0_20_V,TLE9210X_HB_CCPBLK_CCP1_BLANK1,TLE9210X_HB_IDIAG_DEACTIVATED,TLE9210X_HB_ICHGST_CURRENT_1},
+            {TLE9210X_HB_DSM_DH,TLE9210X_HB_DSTH_0_20_V,TLE9210X_HB_CCPBLK_CCP1_BLANK1,TLE9210X_HB_IDIAG_DEACTIVATED,TLE9210X_HB_ICHGST_CURRENT_1},
+            {TLE9210X_HB_DSM_DH,TLE9210X_HB_DSTH_0_20_V,TLE9210X_HB_CCPBLK_CCP1_BLANK1,TLE9210X_HB_IDIAG_DEACTIVATED,TLE9210X_HB_ICHGST_CURRENT_1},
+            {TLE9210X_HB_DSM_DH,TLE9210X_HB_DSTH_0_20_V,TLE9210X_HB_CCPBLK_CCP1_BLANK1,TLE9210X_HB_IDIAG_DEACTIVATED,TLE9210X_HB_ICHGST_CURRENT_1},
+            {TLE9210X_HB_DSM_DH,TLE9210X_HB_DSTH_0_20_V,TLE9210X_HB_CCPBLK_CCP1_BLANK1,TLE9210X_HB_IDIAG_DEACTIVATED,TLE9210X_HB_ICHGST_CURRENT_1},
+            {TLE9210X_HB_DSM_DH,TLE9210X_HB_DSTH_0_20_V,TLE9210X_HB_CCPBLK_CCP1_BLANK1,TLE9210X_HB_IDIAG_DEACTIVATED,TLE9210X_HB_ICHGST_CURRENT_1},
+        },
+    },
+    {
+        {
+            {TLE9210X_HB_DSM_DH,TLE9210X_HB_DSTH_0_20_V,TLE9210X_HB_CCPBLK_CCP1_BLANK1,TLE9210X_HB_IDIAG_DEACTIVATED,TLE9210X_HB_ICHGST_CURRENT_1},
+            {TLE9210X_HB_DSM_DH,TLE9210X_HB_DSTH_0_20_V,TLE9210X_HB_CCPBLK_CCP1_BLANK1,TLE9210X_HB_IDIAG_DEACTIVATED,TLE9210X_HB_ICHGST_CURRENT_1},
+            {TLE9210X_HB_DSM_DH,TLE9210X_HB_DSTH_0_20_V,TLE9210X_HB_CCPBLK_CCP1_BLANK1,TLE9210X_HB_IDIAG_DEACTIVATED,TLE9210X_HB_ICHGST_CURRENT_1},
+            {TLE9210X_HB_DSM_DH,TLE9210X_HB_DSTH_0_20_V,TLE9210X_HB_CCPBLK_CCP1_BLANK1,TLE9210X_HB_IDIAG_DEACTIVATED,TLE9210X_HB_ICHGST_CURRENT_1},
+            {TLE9210X_HB_DSM_DH,TLE9210X_HB_DSTH_0_20_V,TLE9210X_HB_CCPBLK_CCP1_BLANK1,TLE9210X_HB_IDIAG_DEACTIVATED,TLE9210X_HB_ICHGST_CURRENT_1},
+            {TLE9210X_HB_DSM_DH,TLE9210X_HB_DSTH_0_20_V,TLE9210X_HB_CCPBLK_CCP1_BLANK1,TLE9210X_HB_IDIAG_DEACTIVATED,TLE9210X_HB_ICHGST_CURRENT_1},
+            {TLE9210X_HB_DSM_DH,TLE9210X_HB_DSTH_0_20_V,TLE9210X_HB_CCPBLK_CCP1_BLANK1,TLE9210X_HB_IDIAG_DEACTIVATED,TLE9210X_HB_ICHGST_CURRENT_1},
+            {TLE9210X_HB_DSM_DH,TLE9210X_HB_DSTH_0_20_V,TLE9210X_HB_CCPBLK_CCP1_BLANK1,TLE9210X_HB_IDIAG_DEACTIVATED,TLE9210X_HB_ICHGST_CURRENT_1},
+        },
+    },
+};
