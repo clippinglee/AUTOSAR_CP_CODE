@@ -26,10 +26,20 @@
 ## 架构
 整体架构原则上与AUTOSAR标准保持一致
 
+软件集成架构
+
+![Integration arch](./doc/image/Integration_arch.png)
+软件集成将Bsw分成几大类给App提供接口封装：
+- IoWrp
+- EepWrp
+- ComWrp
+- NmWrp
+- WakeWrp
+- DiagWrp
 
 
 IOHWAB 架构
-![IOHWAB ARCH](./doc/image.png)
+![IOHWAB ARCH](./doc/image/IoHwab_Arch.png)
 
 
 ## 编译
