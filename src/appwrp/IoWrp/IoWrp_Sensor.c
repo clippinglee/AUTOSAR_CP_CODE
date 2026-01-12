@@ -81,7 +81,7 @@ SensorAdc SensorAdcInstance[] =
     }
 };
 
-Std_ReturnType Sensor_WriteValue(const SensorAdc* SensorAdcPrt, void* Value)
+Std_ReturnType Sensor_AdcWriteValue(const SensorAdc* SensorAdcPrt, void* Value)
 {
     Std_ReturnType Ret = E_NOT_OK;
     switch(SensorAdcPrt->SensorType)
@@ -108,11 +108,12 @@ Std_ReturnType Sensor_WriteValue(const SensorAdc* SensorAdcPrt, void* Value)
 
     return Ret;
 }
-    
-void Sensor_Transfor(const SensorAdc* SensorAdcPrt)
+
+
+void Sensor_AdcTransfor(const SensorAdc* SensorAdcPrt)
 {
     uint16 SensorAdc;
-    Std_ReturnType Ret = SensorAdcPrt->ReadAdcValue(&SensorAdc);
+    Std_ReturnType Ret = SensorAdcPrt->ReadAdcValue((uint16*)&SensorAdc);
     // Initialization code for sensors can be added here
     uint8 condition = SensorAdcPrt->RangeLenth;
     uint8 index = 0;
@@ -121,12 +122,48 @@ void Sensor_Transfor(const SensorAdc* SensorAdcPrt)
         if(SensorAdc < SensorAdcPrt->AdcRanges[index].AdcValue)
         {
             // Some operation based on the range
-            Ret |= Sensor_WriteValue(SensorAdcPrt, &SensorAdcPrt->AdcRanges[index].Range);
+            Ret |= Sensor_AdcWriteValue(SensorAdcPrt, &SensorAdcPrt->AdcRanges[index].Range);
             break;
         }
         index ++;
     }    
 }   
+
+typedef struct 
+{
+    Sensor_Type SensorType;
+    ReadValue ReadDiValue;
+    WriterFunction_b WriteBooleanValue;
+} SensorDi;
+
+
+
+SensorDi SensorDiInstance[] =
+{
+    {
+        .SensorType = b,
+        .ReadDiValue = NULL,
+        .WriteBooleanValue = NULL
+    },
+    {
+        .SensorType = b,
+        .ReadDiValue = NULL,
+        .WriteBooleanValue = NULL
+    }
+};
+
+
+
+void Sensor_DiTransfor(const SensorDi* SensorDiPrt)
+{
+    boolean SensorDi;
+    Std_ReturnType Ret = SensorDiPrt->ReadDiValue(&SensorDi);
+
+    Ret |= SensorDiPrt->WriteBooleanValue(SensorDi);
+    break;
+ 
+}   
+
 
 void Sensor_Mainfunction(void)
 {
@@ -134,6 +171,12 @@ void Sensor_Mainfunction(void)
     SensorAdc* SensorAdcPrt = SensorAdcInstance;
     for(uint8 SensorId = 0; SensorId < sizeof(SensorAdcInstance)/sizeof(SensorAdc); SensorId++)
     {
-        Sensor_Transfor(&SensorAdcInstance[SensorId]);
+        Sensor_AdcTransfor(&SensorAdcInstance[SensorId]);
+    }
+
+    SensorDi* SensorDiPrt = SensorDiInstance;
+    for(uint8 SensorId = 0; SensorId < sizeof(SensorDiInstance)/sizeof(SensorDi); SensorId++)
+    {
+        Sensor_DiTransfor(&SensorDiInstance[SensorId]);
     }
 }

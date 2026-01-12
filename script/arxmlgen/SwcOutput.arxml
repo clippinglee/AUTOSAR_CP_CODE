@@ -1,0 +1,399 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_4-3-0.xsd">
+  <AR-PACKAGES>
+    <AR-PACKAGE>
+      <SHORT-NAME>DataTypes</SHORT-NAME>
+      <AR-PACKAGE>
+        <SHORT-NAME>ApplicationDataTypes</SHORT-NAME>
+        <ELEMENTS>
+          <APPLICATION-PRIMITIVE-DATA-TYPE UUID="72ab2a625b7545aaac43653c4b8c4c7b">
+            <SHORT-NAME>uint16</SHORT-NAME>
+            <CATEGORY>VALUE</CATEGORY>
+            <SW-DATA-DEF-PROPS>
+              <SW-DATA-DEF-PROPS-VARIANTS>
+                <SW-DATA-DEF-PROPS-CONDITIONAL>
+                  <SW-CALIBRATION-ACCESS>READ-WRITE</SW-CALIBRATION-ACCESS>
+                </SW-DATA-DEF-PROPS-CONDITIONAL>
+              </SW-DATA-DEF-PROPS-VARIANTS>
+            </SW-DATA-DEF-PROPS>
+          </APPLICATION-PRIMITIVE-DATA-TYPE>
+          <APPLICATION-RECORD-DATA-TYPE UUID="9480afdd53524ee8941740d6c5a4c57a">
+            <SHORT-NAME>Position</SHORT-NAME>
+            <CATEGORY>STRUCTURE</CATEGORY>
+            <SW-DATA-DEF-PROPS>
+              <SW-DATA-DEF-PROPS-VARIANTS>
+                <SW-DATA-DEF-PROPS-CONDITIONAL>
+                  <SW-CALIBRATION-ACCESS>READ-WRITE</SW-CALIBRATION-ACCESS>
+                </SW-DATA-DEF-PROPS-CONDITIONAL>
+              </SW-DATA-DEF-PROPS-VARIANTS>
+            </SW-DATA-DEF-PROPS>
+            <ELEMENTS>
+              <APPLICATION-RECORD-ELEMENT UUID="c2677eb8f80144efa61b0ea533de7ec2">
+                <SHORT-NAME>q</SHORT-NAME>
+                <TYPE-TREF DEST="APPLICATION-PRIMITIVE-DATA-TYPE">/DataTypes/ApplicationDataTypes/uint16</TYPE-TREF>
+              </APPLICATION-RECORD-ELEMENT>
+              <APPLICATION-RECORD-ELEMENT UUID="bdb755f0e38640c89b175eacd5d4823f">
+                <SHORT-NAME>w</SHORT-NAME>
+                <TYPE-TREF DEST="APPLICATION-PRIMITIVE-DATA-TYPE">/DataTypes/ApplicationDataTypes/uint16</TYPE-TREF>
+              </APPLICATION-RECORD-ELEMENT>
+            </ELEMENTS>
+          </APPLICATION-RECORD-DATA-TYPE>
+          <APPLICATION-PRIMITIVE-DATA-TYPE UUID="8c11e8f9802c4768bb3d6fef197c944e">
+            <SHORT-NAME>uint32</SHORT-NAME>
+            <CATEGORY>VALUE</CATEGORY>
+            <SW-DATA-DEF-PROPS>
+              <SW-DATA-DEF-PROPS-VARIANTS>
+                <SW-DATA-DEF-PROPS-CONDITIONAL>
+                  <SW-CALIBRATION-ACCESS>READ-WRITE</SW-CALIBRATION-ACCESS>
+                </SW-DATA-DEF-PROPS-CONDITIONAL>
+              </SW-DATA-DEF-PROPS-VARIANTS>
+            </SW-DATA-DEF-PROPS>
+          </APPLICATION-PRIMITIVE-DATA-TYPE>
+          <APPLICATION-PRIMITIVE-DATA-TYPE UUID="84b30986ebaa4db4b3e1a6e2db6d0218">
+            <SHORT-NAME>boolean</SHORT-NAME>
+            <CATEGORY>VALUE</CATEGORY>
+            <SW-DATA-DEF-PROPS>
+              <SW-DATA-DEF-PROPS-VARIANTS>
+                <SW-DATA-DEF-PROPS-CONDITIONAL>
+                  <SW-CALIBRATION-ACCESS>READ-WRITE</SW-CALIBRATION-ACCESS>
+                </SW-DATA-DEF-PROPS-CONDITIONAL>
+              </SW-DATA-DEF-PROPS-VARIANTS>
+            </SW-DATA-DEF-PROPS>
+          </APPLICATION-PRIMITIVE-DATA-TYPE>
+          <APPLICATION-RECORD-DATA-TYPE UUID="c8f933dc355848f1ab0f7128c06bfb0f">
+            <SHORT-NAME>VehicleInfo</SHORT-NAME>
+            <CATEGORY>STRUCTURE</CATEGORY>
+            <SW-DATA-DEF-PROPS>
+              <SW-DATA-DEF-PROPS-VARIANTS>
+                <SW-DATA-DEF-PROPS-CONDITIONAL>
+                  <SW-CALIBRATION-ACCESS>READ-WRITE</SW-CALIBRATION-ACCESS>
+                </SW-DATA-DEF-PROPS-CONDITIONAL>
+              </SW-DATA-DEF-PROPS-VARIANTS>
+            </SW-DATA-DEF-PROPS>
+            <ELEMENTS>
+              <APPLICATION-RECORD-ELEMENT UUID="925ba06f7e8c4d9e9b8180f333898f8e">
+                <SHORT-NAME>e</SHORT-NAME>
+                <TYPE-TREF DEST="APPLICATION-RECORD-DATA-TYPE">/DataTypes/ApplicationDataTypes/Position</TYPE-TREF>
+              </APPLICATION-RECORD-ELEMENT>
+              <APPLICATION-RECORD-ELEMENT UUID="a3349fe562cc42169524727087552763">
+                <SHORT-NAME>r</SHORT-NAME>
+                <TYPE-TREF DEST="APPLICATION-PRIMITIVE-DATA-TYPE">/DataTypes/ApplicationDataTypes/uint32</TYPE-TREF>
+              </APPLICATION-RECORD-ELEMENT>
+              <APPLICATION-RECORD-ELEMENT UUID="af837983e465403bbed7c77873e32741">
+                <SHORT-NAME>t</SHORT-NAME>
+                <TYPE-TREF DEST="APPLICATION-PRIMITIVE-DATA-TYPE">/DataTypes/ApplicationDataTypes/boolean</TYPE-TREF>
+              </APPLICATION-RECORD-ELEMENT>
+            </ELEMENTS>
+          </APPLICATION-RECORD-DATA-TYPE>
+          <APPLICATION-PRIMITIVE-DATA-TYPE UUID="155f27cea6fa44c58e731cdf6b3b7872">
+            <SHORT-NAME>uint8</SHORT-NAME>
+            <CATEGORY>VALUE</CATEGORY>
+            <SW-DATA-DEF-PROPS>
+              <SW-DATA-DEF-PROPS-VARIANTS>
+                <SW-DATA-DEF-PROPS-CONDITIONAL>
+                  <SW-CALIBRATION-ACCESS>READ-WRITE</SW-CALIBRATION-ACCESS>
+                </SW-DATA-DEF-PROPS-CONDITIONAL>
+              </SW-DATA-DEF-PROPS-VARIANTS>
+            </SW-DATA-DEF-PROPS>
+          </APPLICATION-PRIMITIVE-DATA-TYPE>
+          <APPLICATION-ARRAY-DATA-TYPE UUID="044244ee9986475baafeb87d3e33a903">
+            <SHORT-NAME>uint8_array_10</SHORT-NAME>
+            <CATEGORY>ARRAY</CATEGORY>
+            <SW-DATA-DEF-PROPS>
+              <SW-DATA-DEF-PROPS-VARIANTS>
+                <SW-DATA-DEF-PROPS-CONDITIONAL>
+                  <SW-CALIBRATION-ACCESS>READ-WRITE</SW-CALIBRATION-ACCESS>
+                </SW-DATA-DEF-PROPS-CONDITIONAL>
+              </SW-DATA-DEF-PROPS-VARIANTS>
+            </SW-DATA-DEF-PROPS>
+            <ELEMENT UUID="eec5c303777e4a4fae7d8066dd06652b">
+              <SHORT-NAME>uint8_array_10</SHORT-NAME>
+              <CATEGORY>VALUE</CATEGORY>
+              <TYPE-TREF DEST="APPLICATION-PRIMITIVE-DATA-TYPE">/DataTypes/ApplicationDataTypes/uint8</TYPE-TREF>
+              <ARRAY-SIZE-SEMANTICS>FIXED-SIZE</ARRAY-SIZE-SEMANTICS>
+              <MAX-NUMBER-OF-ELEMENTS>10</MAX-NUMBER-OF-ELEMENTS>
+            </ELEMENT>
+          </APPLICATION-ARRAY-DATA-TYPE>
+        </ELEMENTS>
+      </AR-PACKAGE>
+      <AR-PACKAGE>
+        <SHORT-NAME>ImplementationDataTypes</SHORT-NAME>
+        <ELEMENTS>
+          <IMPLEMENTATION-DATA-TYPE UUID="1fa5d5759993464aa1e8a0556bf60849">
+            <SHORT-NAME>uint16</SHORT-NAME>
+            <CATEGORY>uint16</CATEGORY>
+          </IMPLEMENTATION-DATA-TYPE>
+          <IMPLEMENTATION-DATA-TYPE UUID="bfd491eb26244e87b32905bfc13cebf6">
+            <SHORT-NAME>Position</SHORT-NAME>
+            <CATEGORY>STRUCTURE</CATEGORY>
+            <SUB-ELEMENTS>
+              <IMPLEMENTATION-DATA-TYPE-ELEMENT UUID="7f47847f60c24e41a8f6fede34b4d5a6">
+                <SHORT-NAME>q</SHORT-NAME>
+                <CATEGORY>TYPE_REFERENCE</CATEGORY>
+                <SW-DATA-DEF-PROPS>
+                  <SW-DATA-DEF-PROPS-VARIANTS>
+                    <SW-DATA-DEF-PROPS-CONDITIONAL>
+                      <IMPLEMENTATION-DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/DataTypes/ImplementationDataTypes/uint16</IMPLEMENTATION-DATA-TYPE-REF>
+                    </SW-DATA-DEF-PROPS-CONDITIONAL>
+                  </SW-DATA-DEF-PROPS-VARIANTS>
+                </SW-DATA-DEF-PROPS>
+              </IMPLEMENTATION-DATA-TYPE-ELEMENT>
+              <IMPLEMENTATION-DATA-TYPE-ELEMENT UUID="f3b1da988aec4621a7836bc1a3c1f3c9">
+                <SHORT-NAME>w</SHORT-NAME>
+                <CATEGORY>TYPE_REFERENCE</CATEGORY>
+                <SW-DATA-DEF-PROPS>
+                  <SW-DATA-DEF-PROPS-VARIANTS>
+                    <SW-DATA-DEF-PROPS-CONDITIONAL>
+                      <IMPLEMENTATION-DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/DataTypes/ImplementationDataTypes/uint16</IMPLEMENTATION-DATA-TYPE-REF>
+                    </SW-DATA-DEF-PROPS-CONDITIONAL>
+                  </SW-DATA-DEF-PROPS-VARIANTS>
+                </SW-DATA-DEF-PROPS>
+              </IMPLEMENTATION-DATA-TYPE-ELEMENT>
+            </SUB-ELEMENTS>
+          </IMPLEMENTATION-DATA-TYPE>
+          <IMPLEMENTATION-DATA-TYPE UUID="20b5a950687d4ec6987d3a5efbbee320">
+            <SHORT-NAME>uint32</SHORT-NAME>
+            <CATEGORY>uint32</CATEGORY>
+          </IMPLEMENTATION-DATA-TYPE>
+          <IMPLEMENTATION-DATA-TYPE UUID="b2bf8c888e594002b83681b8f17380fa">
+            <SHORT-NAME>boolean</SHORT-NAME>
+            <CATEGORY>boolean</CATEGORY>
+          </IMPLEMENTATION-DATA-TYPE>
+          <IMPLEMENTATION-DATA-TYPE UUID="48cc3fa9e4dd40d3b49839ca28906581">
+            <SHORT-NAME>VehicleInfo</SHORT-NAME>
+            <CATEGORY>STRUCTURE</CATEGORY>
+            <SUB-ELEMENTS>
+              <IMPLEMENTATION-DATA-TYPE-ELEMENT UUID="079b44a710f242ebb532bcfa430a1cf7">
+                <SHORT-NAME>e</SHORT-NAME>
+                <CATEGORY>TYPE_REFERENCE</CATEGORY>
+                <SW-DATA-DEF-PROPS>
+                  <SW-DATA-DEF-PROPS-VARIANTS>
+                    <SW-DATA-DEF-PROPS-CONDITIONAL>
+                      <IMPLEMENTATION-DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/DataTypes/ImplementationDataTypes/Position</IMPLEMENTATION-DATA-TYPE-REF>
+                    </SW-DATA-DEF-PROPS-CONDITIONAL>
+                  </SW-DATA-DEF-PROPS-VARIANTS>
+                </SW-DATA-DEF-PROPS>
+              </IMPLEMENTATION-DATA-TYPE-ELEMENT>
+              <IMPLEMENTATION-DATA-TYPE-ELEMENT UUID="279e260f7eb742dabdde2de1d6fc6756">
+                <SHORT-NAME>r</SHORT-NAME>
+                <CATEGORY>TYPE_REFERENCE</CATEGORY>
+                <SW-DATA-DEF-PROPS>
+                  <SW-DATA-DEF-PROPS-VARIANTS>
+                    <SW-DATA-DEF-PROPS-CONDITIONAL>
+                      <IMPLEMENTATION-DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/DataTypes/ImplementationDataTypes/uint32</IMPLEMENTATION-DATA-TYPE-REF>
+                    </SW-DATA-DEF-PROPS-CONDITIONAL>
+                  </SW-DATA-DEF-PROPS-VARIANTS>
+                </SW-DATA-DEF-PROPS>
+              </IMPLEMENTATION-DATA-TYPE-ELEMENT>
+              <IMPLEMENTATION-DATA-TYPE-ELEMENT UUID="889f9fd3e20743d1b28461a47edd4307">
+                <SHORT-NAME>t</SHORT-NAME>
+                <CATEGORY>TYPE_REFERENCE</CATEGORY>
+                <SW-DATA-DEF-PROPS>
+                  <SW-DATA-DEF-PROPS-VARIANTS>
+                    <SW-DATA-DEF-PROPS-CONDITIONAL>
+                      <IMPLEMENTATION-DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/DataTypes/ImplementationDataTypes/boolean</IMPLEMENTATION-DATA-TYPE-REF>
+                    </SW-DATA-DEF-PROPS-CONDITIONAL>
+                  </SW-DATA-DEF-PROPS-VARIANTS>
+                </SW-DATA-DEF-PROPS>
+              </IMPLEMENTATION-DATA-TYPE-ELEMENT>
+            </SUB-ELEMENTS>
+          </IMPLEMENTATION-DATA-TYPE>
+          <IMPLEMENTATION-DATA-TYPE UUID="3b1338880ab540fba83cd60448f7017d">
+            <SHORT-NAME>uint8</SHORT-NAME>
+            <CATEGORY>uint8</CATEGORY>
+          </IMPLEMENTATION-DATA-TYPE>
+          <IMPLEMENTATION-DATA-TYPE UUID="bd2c56775b2a482aa0ac6e4019c0711e">
+            <SHORT-NAME>uint8_array_10</SHORT-NAME>
+            <CATEGORY>TYPE_REFERENCE</CATEGORY>
+            <SUB-ELEMENTS>
+              <IMPLEMENTATION-DATA-TYPE-ELEMENT UUID="8aad1ca5eb8448279ebf98b5358d2c2f">
+                <SHORT-NAME>Element</SHORT-NAME>
+                <CATEGORY>TYPE_REFERENCE</CATEGORY>
+                <ARRAY-SIZE>10</ARRAY-SIZE>
+                <SW-DATA-DEF-PROPS>
+                  <SW-DATA-DEF-PROPS-VARIANTS>
+                    <SW-DATA-DEF-PROPS-CONDITIONAL>
+                      <IMPLEMENTATION-DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/DataTypes/ImplementationDataTypes/uint8</IMPLEMENTATION-DATA-TYPE-REF>
+                    </SW-DATA-DEF-PROPS-CONDITIONAL>
+                  </SW-DATA-DEF-PROPS-VARIANTS>
+                </SW-DATA-DEF-PROPS>
+              </IMPLEMENTATION-DATA-TYPE-ELEMENT>
+            </SUB-ELEMENTS>
+          </IMPLEMENTATION-DATA-TYPE>
+          <SENDER-RECEIVER-INTERFACE UUID="feb072e31a8240f5b066e7dade2719ac">
+            <SHORT-NAME>SpeedInput</SHORT-NAME>
+            <DATA-ELEMENTS>
+              <VARIABLE-DATA-PROTOTYPE UUID="e7060e4c222d45898362572efdc3b1e2">
+                <SHORT-NAME>SpeedInput</SHORT-NAME>
+                <TYPE-TREF DEST="APPLICATION-PRIMITIVE-DATA-TYPE">/DataTypes/ApplicationDataTypes/uint16</TYPE-TREF>
+              </VARIABLE-DATA-PROTOTYPE>
+            </DATA-ELEMENTS>
+          </SENDER-RECEIVER-INTERFACE>
+          <SENDER-RECEIVER-INTERFACE UUID="ff2a929671c448d78d3e2af098a381a6">
+            <SHORT-NAME>ControlCmd</SHORT-NAME>
+            <DATA-ELEMENTS>
+              <VARIABLE-DATA-PROTOTYPE UUID="2fd15bb626d6443b8fc17b58072c3a02">
+                <SHORT-NAME>ControlCmd</SHORT-NAME>
+                <TYPE-TREF DEST="APPLICATION-PRIMITIVE-DATA-TYPE">/DataTypes/ApplicationDataTypes/boolean</TYPE-TREF>
+              </VARIABLE-DATA-PROTOTYPE>
+            </DATA-ELEMENTS>
+          </SENDER-RECEIVER-INTERFACE>
+          <SENDER-RECEIVER-INTERFACE UUID="f29a62386bd34c7991f26be4b7d71f28">
+            <SHORT-NAME>VehiclePos</SHORT-NAME>
+            <DATA-ELEMENTS>
+              <VARIABLE-DATA-PROTOTYPE UUID="6793f80b3f614328b2ae9a244d5ec314">
+                <SHORT-NAME>VehiclePos</SHORT-NAME>
+                <TYPE-TREF DEST="APPLICATION-RECORD-DATA-TYPE">/DataTypes/ApplicationDataTypes/Position</TYPE-TREF>
+              </VARIABLE-DATA-PROTOTYPE>
+            </DATA-ELEMENTS>
+          </SENDER-RECEIVER-INTERFACE>
+          <SENDER-RECEIVER-INTERFACE UUID="fb45bf112ac7422d9bdbe47fcd58e3db">
+            <SHORT-NAME>VehicleData</SHORT-NAME>
+            <DATA-ELEMENTS>
+              <VARIABLE-DATA-PROTOTYPE UUID="a06c658d2db843e1b94f4ea77d3c1ddd">
+                <SHORT-NAME>VehicleData</SHORT-NAME>
+                <TYPE-TREF DEST="APPLICATION-RECORD-DATA-TYPE">/DataTypes/ApplicationDataTypes/VehicleInfo</TYPE-TREF>
+              </VARIABLE-DATA-PROTOTYPE>
+            </DATA-ELEMENTS>
+          </SENDER-RECEIVER-INTERFACE>
+          <SENDER-RECEIVER-INTERFACE UUID="1b6c35855b9c44db8e1d663cc9109ba6">
+            <SHORT-NAME>SensorBuffer</SHORT-NAME>
+            <DATA-ELEMENTS>
+              <VARIABLE-DATA-PROTOTYPE UUID="f6b2bc8b3a1e4e05933a566027bcee0f">
+                <SHORT-NAME>SensorBuffer</SHORT-NAME>
+                <TYPE-TREF DEST="APPLICATION-ARRAY-DATA-TYPE">/DataTypes/ApplicationDataTypes/uint8_array_10</TYPE-TREF>
+              </VARIABLE-DATA-PROTOTYPE>
+            </DATA-ELEMENTS>
+          </SENDER-RECEIVER-INTERFACE>
+        </ELEMENTS>
+      </AR-PACKAGE>
+    </AR-PACKAGE>
+    <AR-PACKAGE>
+      <SHORT-NAME>Components</SHORT-NAME>
+      <ELEMENTS>
+        <APPLICATION-SW-COMPONENT-TYPE UUID="f38b06ce4fa94227befa36a3827ca442">
+          <SHORT-NAME>NvMA</SHORT-NAME>
+          <PORTS>
+            <R-PORT-PROTOTYPE UUID="eac2d19375fe42648a4b8ae4c6fedac1">
+              <SHORT-NAME>SpeedInput</SHORT-NAME>
+              <REQUIRED-COM-SPECS>
+                <NONQUEUED-RECEIVER-COM-SPEC UUID="c05bf429be8844679835613d7c9d7873">
+                  <DATA-ELEMENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/Interfaces/SpeedInput/SpeedInput</DATA-ELEMENT-REF>
+                  <HANDLE-OUT-OF-RANGE>NONE</HANDLE-OUT-OF-RANGE>
+                  <USES-END-TO-END-PROTECTION>false</USES-END-TO-END-PROTECTION>
+                  <ALIVE-TIMEOUT>0</ALIVE-TIMEOUT>
+                </NONQUEUED-RECEIVER-COM-SPEC>
+              </REQUIRED-COM-SPECS>
+            </R-PORT-PROTOTYPE>
+            <R-PORT-PROTOTYPE UUID="f324df343a7242bdbae9ec1b0ff60b7d">
+              <SHORT-NAME>ControlCmd</SHORT-NAME>
+              <REQUIRED-COM-SPECS>
+                <NONQUEUED-RECEIVER-COM-SPEC UUID="3c3709d0d97b46feaa62fb19dee55b17">
+                  <DATA-ELEMENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/Interfaces/ControlCmd/ControlCmd</DATA-ELEMENT-REF>
+                  <HANDLE-OUT-OF-RANGE>NONE</HANDLE-OUT-OF-RANGE>
+                  <USES-END-TO-END-PROTECTION>false</USES-END-TO-END-PROTECTION>
+                  <ALIVE-TIMEOUT>0</ALIVE-TIMEOUT>
+                </NONQUEUED-RECEIVER-COM-SPEC>
+              </REQUIRED-COM-SPECS>
+            </R-PORT-PROTOTYPE>
+            <P-PORT-PROTOTYPE UUID="dd514f7a90804373aa45220aa21670a0">
+              <SHORT-NAME>VehiclePos</SHORT-NAME>
+              <PROVIDED-COM-SPECS>
+                <NONQUEUED-SENDER-COM-SPEC UUID="c020d770a07440c5b95cf0066112f787">
+                  <DATA-ELEMENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/Interfaces/VehiclePos/VehiclePos</DATA-ELEMENT-REF>
+                  <HANDLE-OUT-OF-RANGE>NONE</HANDLE-OUT-OF-RANGE>
+                  <USES-END-TO-END-PROTECTION>false</USES-END-TO-END-PROTECTION>
+                  <ALIVE-TIMEOUT>0</ALIVE-TIMEOUT>
+                </NONQUEUED-SENDER-COM-SPEC>
+              </PROVIDED-COM-SPECS>
+            </P-PORT-PROTOTYPE>
+            <P-PORT-PROTOTYPE UUID="f18b2451b50b464d8403052f81718527">
+              <SHORT-NAME>VehicleData</SHORT-NAME>
+              <PROVIDED-COM-SPECS>
+                <NONQUEUED-SENDER-COM-SPEC UUID="4818534a6e3f4f918791beb77b626ede">
+                  <DATA-ELEMENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/Interfaces/VehicleData/VehicleData</DATA-ELEMENT-REF>
+                  <HANDLE-OUT-OF-RANGE>NONE</HANDLE-OUT-OF-RANGE>
+                  <USES-END-TO-END-PROTECTION>false</USES-END-TO-END-PROTECTION>
+                  <ALIVE-TIMEOUT>0</ALIVE-TIMEOUT>
+                </NONQUEUED-SENDER-COM-SPEC>
+              </PROVIDED-COM-SPECS>
+            </P-PORT-PROTOTYPE>
+            <P-PORT-PROTOTYPE UUID="a0963c3347ce44e4a913ada755809106">
+              <SHORT-NAME>SensorBuffer</SHORT-NAME>
+              <PROVIDED-COM-SPECS>
+                <NONQUEUED-SENDER-COM-SPEC UUID="cc5b12d66740490b90c605544d30b29c">
+                  <DATA-ELEMENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/Interfaces/SensorBuffer/SensorBuffer</DATA-ELEMENT-REF>
+                  <HANDLE-OUT-OF-RANGE>NONE</HANDLE-OUT-OF-RANGE>
+                  <USES-END-TO-END-PROTECTION>false</USES-END-TO-END-PROTECTION>
+                  <ALIVE-TIMEOUT>0</ALIVE-TIMEOUT>
+                </NONQUEUED-SENDER-COM-SPEC>
+              </PROVIDED-COM-SPECS>
+            </P-PORT-PROTOTYPE>
+          </PORTS>
+          <INTERNAL-BEHAVIORS>
+            <SWC-INTERNAL-BEHAVIOR UUID="71d1d5754d16408caf3a7b0859fe0ad7">
+              <SHORT-NAME>NvMA_InternalBehavior</SHORT-NAME>
+              <RUNNABLES>
+                <RUNNABLE-ENTITY UUID="1f7ca42de7874427bedca3bb91826a68">
+                  <SHORT-NAME>Task_10ms</SHORT-NAME>
+                  <MINIMUM-START-INTERVAL>0</MINIMUM-START-INTERVAL>
+                  <CAN-BE-INVOKED-CONCURRENTLY>false</CAN-BE-INVOKED-CONCURRENTLY>
+                  <DATA-RECEIVE-POINT-BY-ARGUMENTS>
+                    <VARIABLE-ACCESS UUID="46c39c2abe2f444ba370c0209b14a103">
+                      <SHORT-NAME>IN_SpeedInput_SpeedInput</SHORT-NAME>
+                      <ACCESSED-VARIABLE>
+                        <AUTOSAR-VARIABLE-IREF>
+                          <PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/Components/Task/SpeedInput</PORT-PROTOTYPE-REF>
+                          <TARGET-DATA-PROTOTYPE-REF DEST="VARIABLE-DATA-PROTOTYPE">/Interfaces/SpeedInput/SpeedInput</TARGET-DATA-PROTOTYPE-REF>
+                        </AUTOSAR-VARIABLE-IREF>
+                      </ACCESSED-VARIABLE>
+                    </VARIABLE-ACCESS>
+                  </DATA-RECEIVE-POINT-BY-ARGUMENTS>
+                  <DATA-RECEIVE-POINT-BY-ARGUMENTS>
+                    <VARIABLE-ACCESS UUID="f47dabee7a3c4492a3992adc125ca6cb">
+                      <SHORT-NAME>IN_ControlCmd_ControlCmd</SHORT-NAME>
+                      <ACCESSED-VARIABLE>
+                        <AUTOSAR-VARIABLE-IREF>
+                          <PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/Components/Task/ControlCmd</PORT-PROTOTYPE-REF>
+                          <TARGET-DATA-PROTOTYPE-REF DEST="VARIABLE-DATA-PROTOTYPE">/Interfaces/ControlCmd/ControlCmd</TARGET-DATA-PROTOTYPE-REF>
+                        </AUTOSAR-VARIABLE-IREF>
+                      </ACCESSED-VARIABLE>
+                    </VARIABLE-ACCESS>
+                  </DATA-RECEIVE-POINT-BY-ARGUMENTS>
+                  <DATA-SEND-POINT-BY-ARGUMENTS>
+                    <VARIABLE-ACCESS UUID="514e41fd0f314218917fe38c24aa65c8">
+                      <SHORT-NAME>OUT_VehicleData_VehicleData</SHORT-NAME>
+                      <ACCESSED-VARIABLE>
+                        <AUTOSAR-VARIABLE-IREF>
+                          <PORT-PROTOTYPE-REF DEST="P-PORT-PROTOTYPE">/Components/Task/VehicleData</PORT-PROTOTYPE-REF>
+                          <TARGET-DATA-PROTOTYPE-REF DEST="VARIABLE-DATA-PROTOTYPE">/Interfaces/VehicleData/VehicleData</TARGET-DATA-PROTOTYPE-REF>
+                        </AUTOSAR-VARIABLE-IREF>
+                      </ACCESSED-VARIABLE>
+                    </VARIABLE-ACCESS>
+                  </DATA-SEND-POINT-BY-ARGUMENTS>
+                  <DATA-SEND-POINT-BY-ARGUMENTS>
+                    <VARIABLE-ACCESS UUID="afaae30aaf5643ef8f6582b39fadad11">
+                      <SHORT-NAME>OUT_SensorBuffer_SensorBuffer</SHORT-NAME>
+                      <ACCESSED-VARIABLE>
+                        <AUTOSAR-VARIABLE-IREF>
+                          <PORT-PROTOTYPE-REF DEST="P-PORT-PROTOTYPE">/Components/Task/SensorBuffer</PORT-PROTOTYPE-REF>
+                          <TARGET-DATA-PROTOTYPE-REF DEST="VARIABLE-DATA-PROTOTYPE">/Interfaces/SensorBuffer/SensorBuffer</TARGET-DATA-PROTOTYPE-REF>
+                        </AUTOSAR-VARIABLE-IREF>
+                      </ACCESSED-VARIABLE>
+                    </VARIABLE-ACCESS>
+                  </DATA-SEND-POINT-BY-ARGUMENTS>
+                </RUNNABLE-ENTITY>
+              </RUNNABLES>
+              <TASK-EVENT>
+                <TASK-EVENT UUID="dc4c7b286e704a0b8f258fdd2c1dbdb2">
+                  <RUNNABLE-ENTITY-REF DEST="RUNNABLE-ENTITY">/Components/NvMA/NvMA_InternalBehavior/Task_10ms</RUNNABLE-ENTITY-REF>
+                  <TASK-NAME>Task_10ms</TASK-NAME>
+                </TASK-EVENT>
+              </TASK-EVENT>
+            </SWC-INTERNAL-BEHAVIOR>
+          </INTERNAL-BEHAVIORS>
+        </APPLICATION-SW-COMPONENT-TYPE>
+      </ELEMENTS>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>
