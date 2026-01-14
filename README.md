@@ -40,6 +40,10 @@
 EepWrp
 ![alt text](./doc/image/EepWrp_arch.png)
 
+WakeWrp
+![alt text](./doc/image/WakeWrp_ARCH.png)
+
+
 IOHWAB 架构
 ![IOHWAB ARCH](./doc/image/IoHwab_Arch.png)
 

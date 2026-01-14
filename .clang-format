@@ -1,0 +1,82 @@
+---
+Language:        Cpp
+#BasedOnStyle:      Google
+Standard:        Cpp03 # AUTOSAR CP 基础通常是 C89/C99，Cpp03 是最接近的兼容模式
+
+# --- 基础布局 ---
+ColumnLimit:     100
+IndentWidth:     2     # AUTOSAR 行业标准通常是 4 空格，若你的项目组强制要求 2，请改回 2
+TabWidth:        2
+UseTab:          Never
+
+# --- 大括号换行 (Allman Style / BSD) ---
+# AUTOSAR 要求大括号必须另起一行，增加代码块的辨识度
+BreakBeforeBraces: Allman
+BraceWrapping:
+  AfterClass:      true
+  AfterControlStatement: true
+  AfterEnum:       true
+  AfterFunction:   true
+  AfterNamespace:  true
+  AfterStruct:     true
+  AfterUnion:      true
+  BeforeCatch:     true
+  BeforeElse:      true
+  IndentBraces:    false
+  SplitEmptyFunction: false # 空函数也建议换行
+  SplitEmptyRecord: false
+
+# --- 缩进与对齐 ---
+AccessModifierOffset: -4
+# 如果一行放不下，就另起一行并缩进
+AlignAfterOpenBracket: AlwaysBreak
+# 强制构造/初始化列表每个成员独占一行
+PackConstructorInitializers: Never
+Cpp11BracedListStyle: false
+
+AlignConsecutiveAssignments: false # 赋值对齐在代码变更时会产生多余的 diff，不建议开启
+AlignConsecutiveDeclarations: false
+AlignOperands:   true
+AlignTrailingComments: true
+
+# --- 函数与参数换行 ---
+# 强制函数参数在超过列宽或逻辑复杂时每个参数占一行
+AllowAllParametersOfDeclarationOnNextLine: false
+BinPackArguments: false   # 禁止在一行内塞下所有参数
+BinPackParameters: false  # 禁止在一行内塞下所有形参
+AllowShortFunctionsOnASingleLine: None
+AllowShortIfStatementsOnASingleLine: false
+AllowShortLoopsOnASingleLine: false
+AllowAllArgumentsOnNextLine: false
+
+# --- 空格策略 ---
+SpaceAfterCStyleCast: true  # (uint8) value -> (uint8) value，增加强制类型转换的可读性
+SpaceBeforeAssignmentOperators: true
+SpaceBeforeParens: ControlStatements
+SpaceInEmptyParentheses: false
+SpacesInCStyleCastParentheses: false
+SpacesInParentheses: false
+SpacesInSquareBrackets: false
+
+# --- 指针对齐 (非常重要) ---
+# AUTOSAR CP 习惯将星号靠近变量名：uint8 *u8DataPtr;
+PointerAlignment: Right
+DerivePointerAlignment: false
+
+# --- 宏与包含 ---
+# 保持包含顺序不被乱序（因为 CP 中 Std_Types.h 必须在最前面）
+SortIncludes: false 
+# 预处理指令缩进（如果有嵌套宏）
+IndentPPDirectives: AfterHash
+
+# --- 惩罚分值 (Penalty) ---
+# 强制让函数名在赋值号后换行，如果一行太长
+PenaltyBreakAssignment: 50
+PenaltyBreakBeforeFirstCallParameter: 1
+PenaltyReturnTypeOnItsOwnLine: 1000 # 除非必要，否则不要让返回类型独占一行
+
+# switch 语句中的 case 标签缩进
+IndentCaseLabels: true
+
+# 强制数组初始化的缩进
+ContinuationIndentWidth: 2

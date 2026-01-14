@@ -1,0 +1,88 @@
+---
+# 启用 readability-identifier-naming 检查
+Checks: >
+  -*,
+  readability-identifier-naming,
+  readability-documentation-comments,
+  clang-diagnostic-documentation
+
+CheckOptions:
+  # ---------------------------------------------------------
+  # AUTOSAR CP 命名检查配置 (readability-identifier-naming)
+  # ---------------------------------------------------------
+
+  # 1. 类 (Class) - 大驼峰
+  - key: readability-identifier-naming.ClassCase
+    value: CamelCase
+
+  # 2. 结构体 (Struct) - 大驼峰，同时兼容 Module_Type 风格
+  - key: readability-identifier-naming.StructCase
+    value: CamelCase
+  - key: readability-identifier-naming.StructIgnoredRegexp
+    value: '^[A-Z][a-zA-Z0-9]*_[A-Za-z0-9_]+$'
+
+  # 3. 枚举 (Enum) - 大驼峰，同时兼容 Module_EnumType 风格
+  - key: readability-identifier-naming.EnumCase
+    value: CamelCase
+  - key: readability-identifier-naming.EnumIgnoredRegexp
+    value: '^[A-Z][a-zA-Z0-9]*_[A-Za-z0-9_]+$'
+    # 枚举成员 - 使用全大写
+  - key: readability-identifier-naming.EnumConstantCase
+    value: UPPER_CASE
+
+  # 4. 别名 (Typedef) - 兼容 Std_ReturnType 等 AUTOSAR 类型
+  - key: readability-identifier-naming.TypedefCase
+    value: CamelCase
+  - key: readability-identifier-naming.TypedefIgnoredRegexp
+    value: '^[A-Z][a-zA-Z0-9]*_[A-Za-z0-9_]+$'
+
+  # 5. 函数 (Function) - 支持 "模块名_功能名" 风格
+  # 匹配示例: Sensor_AdcWriteValue, Dio_ReadChannel
+  - key: readability-identifier-naming.FunctionCase
+    value: CamelCase
+  - key: readability-identifier-naming.FunctionIgnoredRegexp
+    value: '^[A-Z][a-zA-Z0-9]*_[A-Za-z0-9_]+$'
+
+  # 6. 方法 (Method/Member Function) - 大驼峰
+  - key: readability-identifier-naming.MethodCase
+    value: CamelCase
+
+  # 7. 变量 (Variable) - 小驼峰 (支持 u8Value, ptrConfig 等)
+  - key: readability-identifier-naming.VariableCase
+    value: camelBack
+
+  # 8. 函数参数 (Parameter) - 小驼峰
+  - key: readability-identifier-naming.ParameterCase
+    value: CamelCase
+
+  # 9. 成员变量 (Member Variable) - 小驼峰
+  - key: readability-identifier-naming.MemberCase
+    value: camelBack
+
+  # 10. 私有成员变量 (Private Member) - 小驼峰
+  - key: readability-identifier-naming.PrivateMemberCase
+    value: camelBack
+
+  # 11. 宏 (Macro) - 全大写
+  - key: readability-identifier-naming.MacroDefinitionCase
+    value: UPPER_CASE
+
+  # 12. 命名空间 (Namespace) - 小写
+  - key: readability-identifier-naming.NamespaceCase
+    value: lower_case
+
+  # 13. 模板参数 (Template Parameter) - 大驼峰
+  - key: readability-identifier-naming.TemplateParameterCase
+    value: CamelCase
+
+  # 14. 常量 (Const/Constexpr) - 大驼峰
+  - key: readability-identifier-naming.GlobalConstantCase
+    value: CamelCase
+  - key: readability-identifier-naming.ConstexprVariableCase
+    value: CamelCase
+
+  # 15. 全局变量 - 兼容 g_ 前缀 (可选)
+  - key: readability-identifier-naming.GlobalVariableCase
+    value: CamelCase
+  - key: readability-identifier-naming.GlobalVariableIgnoredRegexp
+    value: '^g_[a-zA-Z0-9_]+$'
