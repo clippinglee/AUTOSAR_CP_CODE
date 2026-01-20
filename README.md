@@ -37,12 +37,18 @@
 - WakeWrp
 - DiagWrp
 
+IoWrp
+
+![alt text](./doc/image/IoWrp_Arch.png)
+
 EepWrp
 ![alt text](./doc/image/EepWrp_arch.png)
 
 WakeWrp
 ![alt text](./doc/image/WakeWrp_ARCH.png)
 
+ComWrp
+![alt text](./doc/image/ComWrp_arch.png)
 
 IOHWAB 架构
 ![IOHWAB ARCH](./doc/image/IoHwab_Arch.png)
